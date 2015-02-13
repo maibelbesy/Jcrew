@@ -2,23 +2,22 @@
 
 
 **Table of Contents:**
-1 Introduction
-2 About Jcrew
-3 Jcrew Employees
+*(1) Introduction
+*(2) About Jcrew
+*(3) Jcrew Employees
 
 
 **(1) Introduction:**
-project to be updates
+*project to be updates
 
 
 **(2) About Jcrew:**
-JCrew is a Software developing company
+*JCrew is a Software developing company
+
+*Mission Statement:*
 
 
 **(3) Jcrew Employees:**
-1 Mai belbesy
-2
-
 
 Jcrew Employee | Email
 ---------------| -----
