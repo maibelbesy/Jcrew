@@ -1,4 +1,4 @@
-![JCrew Logo](file:///Users/Maibelbesy/Desktop/JCrew/Jcrew/images/jcrewlogo.png)
+![JCrew Logo](https://github.com/maibelbesy/Jcrew/blob/master/images/jcrewlogo.png)
 
 
 **Table of Contents:**
