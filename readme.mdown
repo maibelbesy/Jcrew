@@ -1,27 +1,24 @@
-![JCrew Logo](/images/jcrewlogo.png)
+![JCrew Logo](file:///Users/Maibelbesy/Desktop/JCrew/Jcrew/images/jcrewlogo.png)
 
 
-Table of Contents:
-
-*Introduction
-*About Jcrew
-*Jcrew Employees
-
-
-Introduction:
-
-1 project to be updates
+**Table of Contents:**
+1 Introduction
+2 About Jcrew
+3 Jcrew Employees
 
 
-About Jcrew:
+**(1) Introduction:**
+project to be updates
 
-1 JCrew is a Software developing company
+
+**(2) About Jcrew:**
+JCrew is a Software developing company
 
 
-Jcrew Employees:
+**(3) Jcrew Employees:**
 1 Mai belbesy
 2
-3
+
 
 Jcrew Employee | Email
 ---------------| -----
