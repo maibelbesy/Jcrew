@@ -1,7 +1,7 @@
 ![.](https://github.com/maibelbesy/Jcrew/blob/master/images/jcrewlogo.png)
 
 
-** Current Project: QuestBoard**
+**Current Project: QuestBoard**
 **Brief description:**
 The App is a cross platform (it should be accessible everywhere) but minimalistic, this app will rely
 heavily on UX as well as cleaver data analytics backend.
@@ -9,7 +9,7 @@ The person on the quest should be able to check his status and notify the reques
 completion.
 
 
-** About Us:**
+**About Us:**
 *JCrew is a startup Software Developing Company established by 8 GUCians.
 
 **Our Vision**
@@ -19,7 +19,7 @@ completion.
 *In line with our Vision we want to gain the experience to make us flourish and be one of the global leading comapnies.
 
 
-** Jcrew Employees:**
+**Jcrew Employees:**
 
 Jcrew Employee | Email
 ---------------| -----
