@@ -1,26 +1,24 @@
-![JCrew Logo](https://github.com/maibelbesy/Jcrew/blob/master/images/jcrewlogo.png)
+![.](https://github.com/maibelbesy/Jcrew/blob/master/images/jcrewlogo.png)
 
 
 **Table of Contents:**
-
-  *(1) Introduction
-
-  *(2) About Jcrew
-
-  *(3) Jcrew Employees
+*(1) Introduction
+*(2) About Jcrew
+*(3) Jcrew Employees
 
 
 **(1) Introduction:**
-*project to be updates
+The App is a cross platform (it should be accessible everywhere) but minimalistic, this app will rely
+heavily on UX as well as cleaver data analytics backend.
+The person on the quest should be able to check his status and notify the requestor of the tasks 
+completion.
 
 
 **(2) About Jcrew:**
 *JCrew is a Software developing company
-
 **Our Vision**
-*We strive to offer the world **SIMPLICITY**, **EFFICIENCY** and **AMUSEMENT**.*
 
-*Mission Statement:*
+**Our Mission**
 
 
 **(3) Jcrew Employees:**
