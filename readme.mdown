@@ -5,10 +5,10 @@
 
 **Brief description:**
 
-The App is a cross platform (it should be accessible everywhere) but minimalistic, this app will rely
+*The App is a cross platform (it should be accessible everywhere) but minimalistic, this app will rely
 heavily on UX as well as cleaver data analytics backend.
 The person on the quest should be able to check his status and notify the requestor of the tasks 
-completion.
+completion.*
 
 
 **About Us:**
@@ -17,7 +17,7 @@ JCrew is a startup Software Developing Company established by 8 GUCians.
 
 **Our Vision:**
 
-*We strive to offer the world **SIMPLICITY** , **EFFICIENCY** and **AMUSEMENT** .*
+*We strive to offer the world  **SIMPLICITY** , **EFFICIENCY** and **AMUSEMENT** .*
 
 **Our Mission:**
 
