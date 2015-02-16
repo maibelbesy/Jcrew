@@ -2,9 +2,12 @@
 
 
 **Table of Contents:**
-*(1) Introduction
-*(2) About Jcrew
-*(3) Jcrew Employees
+
+  *(1) Introduction
+
+  *(2) About Jcrew
+
+  *(3) Jcrew Employees
 
 
 **(1) Introduction:**
@@ -13,6 +16,9 @@
 
 **(2) About Jcrew:**
 *JCrew is a Software developing company
+
+**Our Vision**
+*We strive to offer the world **SIMPLICITY**, **EFFICIENCY** and **AMUSEMENT**.*
 
 *Mission Statement:*
 
