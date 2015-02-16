@@ -1,0 +1,9 @@
+## Just add <%= render 'comments/comment' %> in post/show.html.erb
+<% @post.comments.each do |comment| %>
+
+  <p>
+    <%= comment.commenter%>
+    <strong> : </strong>
+    <%= comment.body %>
+  </p>
+<% end %>

@@ -21,12 +21,12 @@ class DatabaseSetup < ActiveRecord::Migration
   	end
 
   	create_table :comments do |t|
-  		t.text :content
-  		t.integer :user_id
-  		t.integer :post_id
+      t.string :commenter
+      t.text :body
+      t.references :post, index: true
 
-  		t.timestamps
-  	end
+      t.timestamps null: false
+    end
 
   	create_table :comments_join do |t|
   		t.integer :comment_id
