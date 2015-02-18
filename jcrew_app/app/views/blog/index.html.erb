@@ -1,0 +1,31 @@
+<!-- BLOG PAGE -->
+<!-- <button type="button" class="list-posts">Add Post</button> -->
+<!-- <span><%# button_to "Add Post", new_post_path(params[:id]), class: "list-posts", method: :get %></span> -->
+<button type="button" class="list-posts" style="float: right">List Posts</button>
+<br><br>
+<% @posts.each do |post| %>
+<!--     <div style="height: auto;overflow: hidden;padding: 10px;margin-bottom: 2em">
+        <div class="post-info" style="text-align: center">
+            <%= link_to "#{post.title}", post_path(post.id), :id => "post-title" %>
+            <br>
+            <br>
+            <% date = post.updated_at.to_time.strftime('%B %e at %l:%M %p') %>
+            <p id="post-date-member"><%= "#{date} by #{User.find(post.user_id).name}" %></p>
+            <br>
+            <%count = post.comments.count%>
+            <%string = pluralize(count, 'comment')%>
+            <p id="post-comments"> <%= "#{string}" %> </p>
+            <% if post.created_at != post.updated_at %>
+                <p id="post-comments" style="font-size: 12px; width: 20%;margin-top: 0.3em"> <%= "Edited" %> </p>
+            <% end %>
+        </div>
+        <div class="post-content">
+            <% content = post.content + "<br><br> #{User.first.signature}" if not User.first.signature.blank? %>
+            <% content = post.content if User.first.signature.blank? %>
+            <%= simple_format(content) %>
+        </div>
+    </div> -->
+
+    <!-- This following line replaced the whole commented div block before it. It is called a partial -->
+    <%= render '/layouts/post', :post => post, :index => true %>
+<% end %>

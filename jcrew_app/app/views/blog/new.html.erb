@@ -1,0 +1,21 @@
+<!-- POST PAGE -->
+
+<%= render '/layouts/post_edit', :operation => "add" %>
+
+<!-- if false here acts as a block comment; the whole code inside it will not be executed -->
+<% if false %>
+    <% if flash[:warning] && flash[:warning].count > 0 %>
+    <div class="warning"><%= safe_join(flash[:warning], "<br>".html_safe) %></div>
+    <br>
+    <% end %>
+    <div class="warning">You can use HTML tags in the post content</div>
+<% end %>
+
+<% if false %>
+    <%= form_for :post, :url => create_post_path do |f| %>
+        <%= f.text_field :title, class: "login-input", placeholder: "Enter post title", style: "margin-top: 1em;" %>
+        <%= f.text_area :content, class: "signature-textarea", placeholder: "Enter post content", style: "margin-top: 1em; width: 100%; max-width: 100%;", :rows => 18 %>
+        <br>
+        <%= f.submit "Add", class: "login-button", style: "margin-top: 2em;" %>
+    <% end %>
+<% end %>

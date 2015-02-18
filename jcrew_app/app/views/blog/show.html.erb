@@ -1,0 +1,79 @@
+<!-- POST PAGE -->
+
+<div style="display:inline;">
+    <button type="button" class="delete-post ask-delete" style="float:right">Delete Post</button>
+    <%= button_to "Edit Post", edit_post_path(params[:id]), class: "delete-post", style: "float:right;margin-right: 1em;", method: :get %>
+</div>
+<br><br>
+<!-- <div style="height: auto;overflow: hidden;margin-bottom: 5em">
+    <div class="post-info" style="text-align: center">
+        <p id="post-title"><%= "#{@post.title}" %></p>
+        <br>
+        <% date = @post.updated_at.to_time.strftime('%B %e at %l:%M %p') %>
+        <p id="post-date-member"><%= "#{date} by #{User.find(@post.user_id).name}" %></p>
+        <br>
+            <%count = @post.comments.count%>
+            <%string = pluralize(count, 'comment')%>
+            <p id="post-comments"> <%= "#{string}" %> </p>
+        <% if @post.created_at != @post.updated_at %>
+            <p id="post-comments" style="font-size: 12px; width: 20%;margin-top: 0.3em"> <%= "Edited" %> </p>
+        <% end %>
+    </div>
+    <div class="post-content">
+        <% content = @post.content + "<br><br> #{User.first.signature}" if not User.first.signature.blank? %>
+        <% content = @post.content if User.first.signature.blank? %>
+        <%= simple_format(content) %>
+    </div>
+</div> -->
+
+<!-- This following line replaced the whole commented div block before it. It is called a partial -->
+<%= render '/layouts/post', :post => @post, :index => false %>
+
+<% comments = @post.comments.uniq %>
+<%# if comments.count > 0 %>
+    <% comments.each do |comment| %>
+        <% if comment.comment.count == 0 %>
+            <div class="post-comments">
+                <h3 id="container-meet">Comments</h1>
+                <div class="post-comment">
+                    <strong><p><%= "#{User.find(comment.user_id).name}" %></p></strong>
+                    <br>
+                    <%# content = comment.content + "<br><br> #{User.first.signature}" if not User.first.signature.blank? %>
+                    <%# content = comment.content if User.first.signature.blank? %>
+                    <p style="word-wrap: break-word"><%#= simple_format(content) %></p>
+                    <p style="word-wrap: break-word"><%= comment.content %></p>
+                    <br>
+                    <% replies = comment.replies %>
+                    <% replies.each do |reply| %>
+                    <div class="comment-reply">
+                        <strong><p><%= "#{User.find(reply.user_id).name}" %></p></strong>
+                        <br>
+                        <%# content = reply.content + "<br><br> #{User.first.signature}" if not User.first.signature.blank? %>
+                        <%# content = reply.content if User.first.signature.blank? %>
+                        <p style="word-wrap: break-word"><%#= simple_format(content) %></p>
+                        <p style="word-wrap: break-word"><%= reply.content %></p>
+                    </div>
+                    <% end %>
+                    <input type="text" placeholder="Reply to this comment" class="reply_input" style="float:left;">
+                </div>
+                <input type="text" placeholder="Add a new comment" class="comment_input" style="float:left;">
+            </div>
+        <% end %>
+    <%# end %>
+<% end %>
+
+
+
+
+<!-- Delete Post Alert Box -->
+
+<div class="dimmer display-none">
+    <div class="alert-view">
+        <p>Are you sure?</p>
+        <div style="top: 30%; position: relative;width: 100%;">
+            <%= button_to "Yes", delete_post_path(params[:id]), class: "delete-post", style: "width: 40%", method: :delete %>
+            <%# button_to "Cancel", edit_post_path(params[:id]), class: "delete-post", style: "width: 40%", method: :get %>
+            <button type="button" class="delete-post cancel-delete" style="width: 40%">Cancel</button>
+        </div>
+    </div>
+</div>

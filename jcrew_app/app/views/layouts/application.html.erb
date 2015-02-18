@@ -2,13 +2,63 @@
 <html>
 <head>
   <title>Jcrew</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div class="header">
+	<div style="float: left;width: 40%;height: 55%;position:relative;left:5em;border: 0px solid rgba(208, 208, 208, 0.67);position: relative;top:25%;">
+		<!-- <span class="crew-logo" style="float:left;">Jcrew</span> -->
+		<%= link_to "Jcrew", root_path, class: "crew-logo", style: "float: left" %>
+	</div>
+	<div style="float:right;height: 100%;right: 15em;position:relative">
+		<ul class="navbar-links">
+			<li style="float: left">
+				<!-- <a href="home.html" class="navbar-link"><p id="home">Home</p></a> -->
+				<%= link_to "Home", root_path, class: "navbar-link" %>
+			</li>
+			<li style="float: left">
+				<!-- <a href="blog.html" class="navbar-link"><p id="home">Blog</p></a> -->
+				<%= link_to "Blog", "/blog", class: "navbar-link" %>
+			</li>
+			<li style="float: left" id="test">
+				<!-- <a href="team.html" class="navbar-link"><p>Team</p></a> -->
+				<%= link_to "Team", "/team", class: "navbar-link" %>
+			</li>
+			<li style="float: left">
+				<p class="navbar-link" id="user">Me</p>
+			</li>
+		</ul>
+
+		<div class="account-menu-div display-none">
+			<table class="account-menu">
+				<tr class="account-menu-item">
+					<!-- <td>Profile</td> -->
+					<td><%= link_to "Add Blog Post", new_post_path %></td>
+				</tr>
+				<tr class="account-menu-item">
+					<!-- <td>Profile</td> -->
+					<td><%= link_to "Profile", user_path(1) %></td>
+				</tr>
+				<tr class="account-menu-item">
+					<!-- <td>Log out</td> -->
+					<td><%= link_to "Log out", user_path(1) %></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="container-body">
+  <br><br><br>
+  <div class="container-container" style="padding: 10px;">
+		<%= yield %>
+	</div>
+</div>
 
 </body>
 </html>

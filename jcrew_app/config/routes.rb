@@ -1,4 +1,25 @@
 Rails.application.routes.draw do
+
+  # The main route '/'
+  root 'main#home'
+
+  # Routes for the main website (static pages)
+  get '/team' => 'main#team', as: :team
+
+  # Routes for the account web pages
+  get '/users/edit/:id' => 'account#edit', as: :user_edit
+  get '/users/:id' => 'account#show', as: :user
+  post '/users/edit/:id' => 'account#update', as: :user_update
+
+  # Routes for the blog
+  get '/blog' => 'blog#index', as: :posts
+  get '/blog/post/:id' => 'blog#show', as: :post
+  get '/blog/new' => 'blog#new', as: :new_post
+  get '/blog/edit/:id' => 'blog#edit', as: :edit_post
+  post '/blog/edit/:id' => 'blog#update', as: :update_post
+  post '/blog/new' => 'blog#create', as: :create_post
+  delete '/blog/post/:id'=> 'blog#destroy', as: :delete_post
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

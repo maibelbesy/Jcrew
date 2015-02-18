@@ -1,0 +1,24 @@
+<h1 id="container-meet">Meet the Superheroes</h1>
+<br><br><br>
+
+<!-- @team is an ActiveRecord::Relation object that has all the team members -->
+<!-- Iterating over the @team object to get each member's details -->
+<% @team.each do |member| %>
+	<div style="height: auto;overflow: hidden">
+        <div class="member-photo">
+            <% if member.photo.blank? %>
+            	<p style="color:white">No Image</p>
+            <% else %>
+            	<img src=<%= "#{member.photo}"%> width="100%" height="100%" style"border-radius: 100%;-moz-border-radius: 100%;-khtml-border-radius: 100%;-webkit-border-radius: 100%;">
+            <% end %>
+        </div>
+    	<div style="float: left;width:80%;">
+    	    <!-- <p id="member-name" style=""><%= "#{member.name}" %></p> -->
+            <%= link_to "#{member.name}", user_path(member.id), id: "member-name", style: "top: 1.3em;" %>
+    	    <!-- <br> -->
+    	    <!-- <p id="member-about"><%= "#{member.about}" %></p> -->
+    	</div>
+    </div>
+<% end %>
+
+<br><br><br>
