@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get '/blog/edit/:id' => 'blog#edit', as: :edit_post
   post '/blog/edit/:id' => 'blog#update', as: :update_post
   post '/blog/new' => 'blog#create', as: :create_post
+  post '/blog/post/comment/:id' => 'comments#create', as: :post_comment
+  post '/blog/post/reply/comment/:post_id/:comment_id' => 'reply#create', as: :post_reply
   delete '/blog/post/:id'=> 'blog#destroy', as: :delete_post
 
   # The priority is based upon order of creation: first created -> highest priority.
