@@ -1,5 +1,9 @@
 class Post < ActiveRecord::Base
 
+	def self.add_demo
+		self.create(:title => 'test', :user_id => User.first.id, :content => 'shaghal!')
+	end
+
 	# DO NOT ALTER ANYTHING BELOW THIS LINE
 
 	belongs_to :user, foreign_key: "user_id"

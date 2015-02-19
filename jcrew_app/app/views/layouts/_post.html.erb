@@ -16,6 +16,11 @@
         <% if post.created_at != post.updated_at %>
             <p id="post-comments" style="font-size: 12px; width: 20%;margin-top: 0.3em"> <%= "Edited" %> </p>
         <% end %>
+        <br>
+        <!-- <div class="g-plus" data-action="share" data-annotation="bubble" data-href=<%= "http://www.facebook.com#{post_path(post.id)}" %>></div>
+        <br>
+        <br>
+        <div class="fb-share-button" data-href=<%= "http://www.facebook.com#{post_path(post.id)}" %> data-layout="button_count"></div> -->
     </div>
     <div class="post-content">
         <% content = post.content + "<br><br> #{User.first.signature}" if not User.first.signature.blank? %>
