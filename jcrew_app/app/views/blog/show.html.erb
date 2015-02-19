@@ -28,20 +28,32 @@
 
 <!-- This following line replaced the whole commented div block before it. It is called a partial -->
 <%= render '/layouts/post', :post => @post, :index => false %>
-
+<div >
+ <%= form_for :comment, :url => post_comment_path do |f| %>
+        
+        <%= f.text_field :content, class: "signature-textarea", placeholder: "Enter comment", style: "margin-top: 1em; width: 100%; max-width: 100%; max-length:25%;", :rows => 18 %>
+        <br>
+       <!--  <%= f.submit "Add", class: "login-button", style: "margin-top: 0.5em;" %> -->
+    <% end %>
+</div>
+<br/>
+<hr></hr>
+<br/>
 <% comments = @post.comments.uniq %>
 <%# if comments.count > 0 %>
     <% comments.each do |comment| %>
         <% if comment.comment.count == 0 %>
             <div class="post-comments">
-                <h3 id="container-meet">Comments</h1>
+                <h3 id="container-meet">Comment</h1>
                 <div class="post-comment">
-                    <strong><p><%= "#{User.find(comment.user_id).name}" %></p></strong>
+                    <strong><p>User Name: <%= "#{User.find(comment.user_id).name}" %></p></strong>
+                    <br>
+                    <strong><p></strong>Signature: <%= "#{User.first.signature}" %></p></strong>
                     <br>
                     <%# content = comment.content + "<br><br> #{User.first.signature}" if not User.first.signature.blank? %>
                     <%# content = comment.content if User.first.signature.blank? %>
                     <p style="word-wrap: break-word"><%#= simple_format(content) %></p>
-                    <p style="word-wrap: break-word"><%= comment.content %></p>
+                    <p style="word-wrap: break-word">Content: <%= comment.content %></p>
                     <br>
                     <% replies = comment.replies %>
                     <% replies.each do |reply| %>
@@ -54,9 +66,12 @@
                         <p style="word-wrap: break-word"><%= reply.content %></p>
                     </div>
                     <% end %>
-                    <input type="text" placeholder="Reply to this comment" class="reply_input" style="float:left;">
-                </div>
-                <input type="text" placeholder="Add a new comment" class="comment_input" style="float:left;">
+                    <%= form_for :reply, :url => post_reply_path(@post.id,comment.id) do |r| %>
+                    <%= r.text_field :content, class: "signature-textarea", placeholder: "Enter reply", style: "margin-top: 1em; width: 100%; max-width: 100%; max-length:25%;", :rows => 18 %>
+                     <br>
+                    <!--  <%= r.submit "Add", class: "login-button", style: "margin-top: 0.5em;" %> -->
+    <% end %>
+                </div>   
             </div>
         <% end %>
     <%# end %>
