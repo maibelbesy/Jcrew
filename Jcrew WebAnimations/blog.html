@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jcrew</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="test.js"></script>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        <div class="header">
+            <div style="float: left;width: 40%;height: 55%;position:relative;left:5em;border: 0px solid rgba(208, 208, 208, 0.67);position: relative;top:25%;">
+<!--                <span><p class="glass">&#9906;</p>-->
+<!--                    <input type="text" placeholder="Search for people and tutorial groups" class="search-input" style="float:left;"></span>-->
+                <span class="crew-logo" style="float:left;">Jcrew</span>
+            </div>
+            <div style="float:right;height: 100%;right: 15em;position:relative">
+                <ul class="navbar-links">
+                    <li style="float: left">
+                        <a href="home.html" class="navbar-link"><p id="home">Home</p></a>
+                    </li>
+                    <li style="float: left">
+                        <a href="blog.html" class="navbar-link"><p id="home">Blog</p></a>
+                    </li>
+                    <li style="float: left" id="test">
+                       <a href="team.html" class="navbar-link"><p>Team</p></a>
+                    </li>
+                    <li style="float: left">
+                        <section class="list">
+                          <h2>Me</h2>
+                          <ul>
+                               <li class="settings">Profile</li>
+                               <li class="signout">Logout</li>
+                          </ul>  
+                          </section>
+                    </li>
+                </ul>
+                
+                <div class="account-menu-div display-none">
+                    <table class="account-menu">
+                        <tr class="account-menu-item">
+                            <td>Profile</td>
+                        </tr>
+<!--
+                        <tr class="account-menu-item">
+                            <td>Requests</td>
+                        </tr>
+                        <tr class="account-menu-item">
+                            <td>Messages</td>
+                        </tr>
+-->
+                        <tr class="account-menu-item">
+                            <td>Log out</td>
+                        </tr>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="container-body">
+            <br><br>
+            <div class="container-container" style="width:80%">
+                <button type="button" class="list-posts">List Posts</button>
+                <br><br><br>
+                <div style="height: auto;overflow: hidden;">
+                    <div class="post-info" style="text-align: center">
+                        <p id="post-title">Post title: More details</p>
+                        <br>
+                        <p id="post-date-member">Post date by Member Name</p>
+                        <br>
+                        <p id="post-comments"># comments</p>
+                    </div>
+                    <div class="post-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi metus. Praesent mi elit, scelerisque ac tempor eu, scelerisque non neque. Nullam tellus turpis, consectetur sed ultricies eget, bibendum sed libero. Nam venenatis viverra luctus. Nullam sed malesuada ante. Sed interdum fringilla turpis, et vehicula neque. Sed id ipsum sollicitudin, ornare est vel, condimentum libero. Nulla luctus ante at dictum egestas. Suspendisse ut justo nibh. Aenean et iaculis neque. Pellentesque tincidunt ipsum at tincidunt eleifend.</p>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi metus. Praesent mi elit, scelerisque ac tempor eu, scelerisque non neque. Nullam tellus turpis, consectetur sed ultricies eget, bibendum sed libero. Nam venenatis viverra luctus. Nullam sed malesuada ante. Sed interdum fringilla turpis, et vehicula neque. Sed id ipsum sollicitudin, ornare est vel, condimentum libero. Nulla luctus ante at dictum egestas. Suspendisse ut justo nibh. Aenean et iaculis neque. Pellentesque tincidunt ipsum at tincidunt eleifend.</p>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi metus. Praesent mi elit, scelerisque ac tempor eu, scelerisque non neque. Nullam tellus turpis, consectetur sed ultricies eget, bibendum sed libero. Nam venenatis viverra luctus. Nullam sed malesuada ante. Sed interdum fringilla turpis, et vehicula neque. Sed id ipsum sollicitudin, ornare est vel, condimentum libero. Nulla luctus ante at dictum egestas. Suspendisse ut justo nibh. Aenean et iaculis neque. Pellentesque tincidunt ipsum at tincidunt eleifend.</p>
+                    </div>
+                </div>
+                <br><br><br><br><br>
+                <div style="height: auto;overflow: hidden;">
+                    <div class="post-info">
+                        <p id="post-title">Post title: More details</p>
+                        <br>
+                        <p id="post-date-member">Post date by Member Name</p>
+                    </div>
+                    <div class="post-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi metus. Praesent mi elit, scelerisque ac tempor eu, scelerisque non neque. Nullam tellus turpis, consectetur sed ultricies eget, bibendum sed libero. Nam venenatis viverra luctus. Nullam sed malesuada ante. Sed interdum fringilla turpis, et vehicula neque. Sed id ipsum sollicitudin, ornare est vel, condimentum libero. Nulla luctus ante at dictum egestas. Suspendisse ut justo nibh. Aenean et iaculis neque. Pellentesque tincidunt ipsum at tincidunt eleifend.</p>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi metus. Praesent mi elit, scelerisque ac tempor eu, scelerisque non neque. Nullam tellus turpis, consectetur sed ultricies eget, bibendum sed libero. Nam venenatis viverra luctus. Nullam sed malesuada ante. Sed interdum fringilla turpis, et vehicula neque. Sed id ipsum sollicitudin, ornare est vel, condimentum libero. Nulla luctus ante at dictum egestas. Suspendisse ut justo nibh. Aenean et iaculis neque. Pellentesque tincidunt ipsum at tincidunt eleifend.</p>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi metus. Praesent mi elit, scelerisque ac tempor eu, scelerisque non neque. Nullam tellus turpis, consectetur sed ultricies eget, bibendum sed libero. Nam venenatis viverra luctus. Nullam sed malesuada ante. Sed interdum fringilla turpis, et vehicula neque. Sed id ipsum sollicitudin, ornare est vel, condimentum libero. Nulla luctus ante at dictum egestas. Suspendisse ut justo nibh. Aenean et iaculis neque. Pellentesque tincidunt ipsum at tincidunt eleifend.</p>
+                    </div>
+                </div>
+                <br><br><br><br><br>
+                <div style="height: auto;overflow: hidden;">
+                    <div class="post-info">
+                        <p id="post-title">Post title: More details</p>
+                        <br>
+                        <p id="post-date-member">Post date by Member Name</p>
+                    </div>
+                    <div class="post-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi metus. Praesent mi elit, scelerisque ac tempor eu, scelerisque non neque. Nullam tellus turpis, consectetur sed ultricies eget, bibendum sed libero. Nam venenatis viverra luctus. Nullam sed malesuada ante. Sed interdum fringilla turpis, et vehicula neque. Sed id ipsum sollicitudin, ornare est vel, condimentum libero. Nulla luctus ante at dictum egestas. Suspendisse ut justo nibh. Aenean et iaculis neque. Pellentesque tincidunt ipsum at tincidunt eleifend.</p>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi metus. Praesent mi elit, scelerisque ac tempor eu, scelerisque non neque. Nullam tellus turpis, consectetur sed ultricies eget, bibendum sed libero. Nam venenatis viverra luctus. Nullam sed malesuada ante. Sed interdum fringilla turpis, et vehicula neque. Sed id ipsum sollicitudin, ornare est vel, condimentum libero. Nulla luctus ante at dictum egestas. Suspendisse ut justo nibh. Aenean et iaculis neque. Pellentesque tincidunt ipsum at tincidunt eleifend.</p>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi metus. Praesent mi elit, scelerisque ac tempor eu, scelerisque non neque. Nullam tellus turpis, consectetur sed ultricies eget, bibendum sed libero. Nam venenatis viverra luctus. Nullam sed malesuada ante. Sed interdum fringilla turpis, et vehicula neque. Sed id ipsum sollicitudin, ornare est vel, condimentum libero. Nulla luctus ante at dictum egestas. Suspendisse ut justo nibh. Aenean et iaculis neque. Pellentesque tincidunt ipsum at tincidunt eleifend.</p>
+                    </div>
+                </div>
+                <br><br><br><br><br>
+                <div style="height: auto;overflow: hidden;">
+                    <div class="post-info">
+                        <p id="post-title">Post title: More details</p>
+                        <br>
+                        <p id="post-date-member">Post date by Member Name</p>
+                    </div>
+                    <div class="post-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi metus. Praesent mi elit, scelerisque ac tempor eu, scelerisque non neque. Nullam tellus turpis, consectetur sed ultricies eget, bibendum sed libero. Nam venenatis viverra luctus. Nullam sed malesuada ante. Sed interdum fringilla turpis, et vehicula neque. Sed id ipsum sollicitudin, ornare est vel, condimentum libero. Nulla luctus ante at dictum egestas. Suspendisse ut justo nibh. Aenean et iaculis neque. Pellentesque tincidunt ipsum at tincidunt eleifend.</p>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi metus. Praesent mi elit, scelerisque ac tempor eu, scelerisque non neque. Nullam tellus turpis, consectetur sed ultricies eget, bibendum sed libero. Nam venenatis viverra luctus. Nullam sed malesuada ante. Sed interdum fringilla turpis, et vehicula neque. Sed id ipsum sollicitudin, ornare est vel, condimentum libero. Nulla luctus ante at dictum egestas. Suspendisse ut justo nibh. Aenean et iaculis neque. Pellentesque tincidunt ipsum at tincidunt eleifend.</p>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi metus. Praesent mi elit, scelerisque ac tempor eu, scelerisque non neque. Nullam tellus turpis, consectetur sed ultricies eget, bibendum sed libero. Nam venenatis viverra luctus. Nullam sed malesuada ante. Sed interdum fringilla turpis, et vehicula neque. Sed id ipsum sollicitudin, ornare est vel, condimentum libero. Nulla luctus ante at dictum egestas. Suspendisse ut justo nibh. Aenean et iaculis neque. Pellentesque tincidunt ipsum at tincidunt eleifend.</p>
+                    </div>
+                </div>
+                <br><br><br><br><br>
+                <div style="height: auto;overflow: hidden;">
+                    <div class="post-info">
+                        <p id="post-title">Post title: More details</p>
+                        <br>
+                        <p id="post-date-member">Post date by Member Name</p>
+                    </div>
+                    <div class="post-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi metus. Praesent mi elit, scelerisque ac tempor eu, scelerisque non neque. Nullam tellus turpis, consectetur sed ultricies eget, bibendum sed libero. Nam venenatis viverra luctus. Nullam sed malesuada ante. Sed interdum fringilla turpis, et vehicula neque. Sed id ipsum sollicitudin, ornare est vel, condimentum libero. Nulla luctus ante at dictum egestas. Suspendisse ut justo nibh. Aenean et iaculis neque. Pellentesque tincidunt ipsum at tincidunt eleifend.</p>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi metus. Praesent mi elit, scelerisque ac tempor eu, scelerisque non neque. Nullam tellus turpis, consectetur sed ultricies eget, bibendum sed libero. Nam venenatis viverra luctus. Nullam sed malesuada ante. Sed interdum fringilla turpis, et vehicula neque. Sed id ipsum sollicitudin, ornare est vel, condimentum libero. Nulla luctus ante at dictum egestas. Suspendisse ut justo nibh. Aenean et iaculis neque. Pellentesque tincidunt ipsum at tincidunt eleifend.</p>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi metus. Praesent mi elit, scelerisque ac tempor eu, scelerisque non neque. Nullam tellus turpis, consectetur sed ultricies eget, bibendum sed libero. Nam venenatis viverra luctus. Nullam sed malesuada ante. Sed interdum fringilla turpis, et vehicula neque. Sed id ipsum sollicitudin, ornare est vel, condimentum libero. Nulla luctus ante at dictum egestas. Suspendisse ut justo nibh. Aenean et iaculis neque. Pellentesque tincidunt ipsum at tincidunt eleifend.</p>
+                    </div>
+                </div>
+                <br><br><br><br><br>
+            </div>
+        </div>
+        
+<!--        <div style="-webkit-transform: rotate(45deg);
+                    -moz-transform: rotate(45deg);
+                 -o-transform: rotate(45deg);"> -->
+<!--        </div>-->
+        
+        <div class="dimmer display-none">
+            <div class="slider">
+                <div style="margin:0 auto">
+                    <p>Are you sure?</p>
+                    <button>Yes</button>
+                    <button>No</button>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

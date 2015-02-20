@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jcrew</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="test.js"></script>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        
+        <div class="header">
+            <div style="float: left;width: 40%;height: 55%;position:relative;left:5em;border: 0px solid rgba(208, 208, 208, 0.67);position: relative;top:25%;">
+                <span class="crew-logo" style="float:left;">Jcrew</span>
+            </div>
+            <div style="float:right;height: 100%;right: 15em;position:relative">
+                <ul class="navbar-links">
+                    <li style="float: left">
+                        <a href="home.html" class="navbar-link"><p id="home">Home</p></a>
+                    </li>
+                    <li style="float: left">
+                        <a href="blog.html" class="navbar-link"><p id="home">Blog</p></a>
+                    </li>
+                    <li style="float: left" id="test">
+                       <a href="team.html" class="navbar-link"><p>Team</p></a>
+                    </li>
+                    <li style="float: left">
+                        <section class="list">
+                          <h2>Me</h2>
+                          <ul>
+                               <li class="settings">Profile</li>
+                               <li class="signout">Logout</li>
+                          </ul>  
+                          </section>
+                    </li>
+                </ul>
+                
+                <div class="account-menu-div display-none">
+                    <table class="account-menu">
+                        <tr class="account-menu-item">
+                            <td>Profile</td>
+                        </tr>
+                        <tr class="account-menu-item">
+                            <td>Log out</td>
+                        </tr>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="container-body">
+            <div class="container-container">
+                <br><br><br>
+                <div style="height: auto;overflow: auto;">
+                    <div class="member-photo">
+                        <p style="color:white">Image</p>
+                    </div>
+                    <div style="float: right;width:80%;hidden">
+                        <input type="text" placeholder="Enter your name" class="login-input" style="margin-top: 1em; width: 60%;" >
+                        <br><br>
+                        <input type="text" placeholder="Enter your email" class="login-input" style="margin-top: 1em; width: 60%;" >
+                        <br><br>
+                        <input type="text" placeholder="Link your profile photo" class="login-input" style="margin-top: 1em; width: 60%;" >
+                        <br><br><br><br><br>
+                        <textarea rows="2" placeholder="Enter information about yourself" class="signature-textarea"></textarea>
+                        <br><br><br><br><br>
+                        <textarea rows="2" placeholder="Enter your signature" class="signature-textarea"></textarea>
+                        <br><br><br>
+                    </div>
+                </div>
+                <div style="border-bottom: 1px solid; border-color: rgba(128, 128, 128, 0.52)"></div>
+                <div>
+                    <br><br>
+                    <h1 id="container-meet">Reset your password</h1>
+                    <br><br>
+                    <input type="text" placeholder="Enter your password" class="login-input" style="margin-top: 1em; width: 60%;" >
+                        <br><br>
+                        <input type="password" placeholder="Create a password" class="login-input" style="margin-top: 1em; width: 60%;" >
+                        <br><br>
+                        <input type="password" placeholder="Confirm password" class="login-input" style="margin-top: 1em; width: 60%;" >
+                    <br><br><br>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
