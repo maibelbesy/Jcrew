@@ -221,14 +221,14 @@ a:visited {
     z-index:100000;
 }
 
-/*.model svg {
+.model svg {
     position:absolute;
     -webkit-backface-visibility:hidden;
        -moz-backface-visibility:hidden;
          -o-backface-visibility:hidden;
         -ms-backface-visibility:hidden;
             backface-visibility:hidden;
-}*/
+}
 
 #polynode,
 #scene,
