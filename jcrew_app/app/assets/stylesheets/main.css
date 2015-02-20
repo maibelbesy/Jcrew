@@ -130,6 +130,16 @@ a:visited {
     height: auto;
 }
 
+#canvas{
+    background-color: #2c343f;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    margin: 0em auto;
+    top: 0em;
+    left: 0em;
+}
+
 .container-container{
     position: relative;
     width: 60%;
@@ -271,7 +281,7 @@ a:visited {
 }
 
 .post-comment{
-    border-bottom: 1px solid;
+    /*border-bottom: 1px solid;*/
     padding: 5px;
     border-color: rgba(255, 30, 30, 0.65);
     margin-top: 0.5em;
@@ -379,7 +389,7 @@ a:visited {
     margin: 0em auto;
     top: 0em;
     left: 0em;
-    z-index:1000;
+    /*z-index: 10;*/
     opacity: 0;
 }
 

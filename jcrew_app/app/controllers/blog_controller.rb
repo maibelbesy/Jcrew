@@ -9,6 +9,7 @@ class BlogController < ApplicationController
 	end
 
 	def new
+		redirect_guests
 	end
 
 	def create
@@ -22,6 +23,7 @@ class BlogController < ApplicationController
 	end
 
 	def edit
+		redirect_guests
 		@post = Post.find(params[:id])
 	end
 

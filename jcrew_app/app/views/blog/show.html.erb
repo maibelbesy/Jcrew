@@ -1,9 +1,11 @@
 <!-- POST PAGE -->
+<% if logged_in? && @current_user.is_admin %>
+    <div style="display:inline;">
+        <button type="button" class="delete-post ask-delete" style="float:right">Delete Post</button>
+        <%= button_to "Edit Post", edit_post_path(@post.id), class: "delete-post", style: "float:right;margin-right: 1em;", method: :get %>
+    </div>
+<% end %>
 
-<div style="display:inline;">
-    <button type="button" class="delete-post ask-delete" style="float:right">Delete Post</button>
-    <%= button_to "Edit Post", edit_post_path(params[:id]), class: "delete-post", style: "float:right;margin-right: 1em;", method: :get %>
-</div>
 <br><br>
 <!-- <div style="height: auto;overflow: hidden;margin-bottom: 5em">
     <div class="post-info" style="text-align: center">
@@ -28,79 +30,46 @@
 
 <!-- This following line replaced the whole commented div block before it. It is called a partial -->
 <%= render '/layouts/post', :post => @post, :index => false %>
-<div >
- <%= form_for :comment, :url => post_comment_path do |f| %>
-        
-        <%= f.text_field :content, class: "signature-textarea", placeholder: "Enter comment", style: "margin-top: 1em; width: 100%; max-width: 100%; max-length:25%;", :rows => 18 %>
-        <br>
-       <!--  <%= f.submit "Add", class: "login-button", style: "margin-top: 0.5em;" %> -->
-    <% end %>
-</div>
-<br/>
-<hr></hr>
-<br/>
-<% comments = @post.comments.uniq %>
 
+
+<% comments = @post.comments %>
 <div class="post-comments">
     <h3 id="container-meet">Comments</h1>
+    <% if logged_in? %>
+        <%= form_for :comment, :url => post_comment_path do |f| %>
+            <%= f.text_field :content, class: "comment_input", placeholder: "Add a new comment", style: "float:left;margin-bottom: 1em" %>
+        <% end %>
+    <% end %>
     <% comments.each do |comment| %>
-<<<<<<< HEAD
-        <%# if comment.comment.count == 0 %>
-            <div class="post-comment">
-                <strong><p><%= "#{User.find(comment.user_id).name}" %></p></strong>
-                <br>
-                <%# content = comment.content + "<br><br> #{User.first.signature}" if not User.first.signature.blank? %>
-                <%# content = comment.content if User.first.signature.blank? %>
-                <p style="word-wrap: break-word"><%#= simple_format(content) %></p>
-                <p style="word-wrap: break-word"><%= comment.content %></p>
-                <br>
-                <% replies = comment.replies %>
-                <% replies.each do |reply| %>
-=======
         <% if comment.comment.count == 0 %>
-            <div class="post-comments">
-                <h3 id="container-meet">Comment</h1>
                 <div class="post-comment">
-                    <strong><p>User Name: <%= "#{User.find(comment.user_id).name}" %></p></strong>
+                    <strong><p><%= "#{comment.user.name}" %></p></strong>
                     <br>
-                    <strong><p></strong>Signature: <%= "#{User.first.signature}" %></p></strong>
-                    <br>
-                    <%# content = comment.content + "<br><br> #{User.first.signature}" if not User.first.signature.blank? %>
-                    <%# content = comment.content if User.first.signature.blank? %>
-                    <p style="word-wrap: break-word"><%#= simple_format(content) %></p>
-                    <p style="word-wrap: break-word">Content: <%= comment.content %></p>
+                    <% content = comment.content + "<br><br> <i>#{comment.user.signature}</i>" if not comment.user.signature.blank? %>
+                    <% content = comment.content if comment.user.signature.blank? %>
+                    <p style="word-wrap: break-word"><%= simple_format(content) %></p>
+                    <hr style="margin-top: 0.4em; border-color: rgba(255, 30, 30, 0.65);; border-width: 1px"></hr>
                     <br>
                     <% replies = comment.replies %>
                     <% replies.each do |reply| %>
->>>>>>> d93ff0c0d6a24301efca55d35c37645909d2b98e
-                    <div class="comment-reply">
-                        <strong><p><%= "#{User.find(reply.user_id).name}" %></p></strong>
-                        <br>
-                        <%# content = reply.content + "<br><br> #{User.first.signature}" if not User.first.signature.blank? %>
-                        <%# content = reply.content if User.first.signature.blank? %>
-                        <p style="word-wrap: break-word"><%#= simple_format(content) %></p>
-                        <p style="word-wrap: break-word"><%= reply.content %></p>
-                    </div>
-<<<<<<< HEAD
-                <% end %>
-                <input type="text" placeholder="Reply to this comment" class="reply_input" style="float:left;">
-=======
+                        <div class="comment-reply" style="margin-bottom: 1em">
+                            <strong><p><%= "#{reply.user.name}" %></p></strong>
+                            <br>
+                            <% content = reply.content + "<br><br> <i>#{comment.user.signature}</i>" if not comment.user.signature.blank? %>
+                            <% content = reply.content if comment.user.signature.blank? %>
+                            <p style="word-wrap: break-word"><%= simple_format(content) %></p>
+                        </div>
                     <% end %>
-                    <%= form_for :reply, :url => post_reply_path(@post.id,comment.id) do |r| %>
-                    <%= r.text_field :content, class: "signature-textarea", placeholder: "Enter reply", style: "margin-top: 1em; width: 100%; max-width: 100%; max-length:25%;", :rows => 18 %>
-                     <br>
-                    <!--  <%= r.submit "Add", class: "login-button", style: "margin-top: 0.5em;" %> -->
-    <% end %>
+                    <% if logged_in? %>
+                        <%= form_for :reply, :url => post_reply_path(@post.id,comment.id) do |r| %>
+                            <%= r.text_field :content, class: "reply_input", placeholder: "Reply to this comment", style: "margin-top: 1em;" %>
+                         <br>
+                        <% end %>
+                    <% end %>
                 </div>   
->>>>>>> d93ff0c0d6a24301efca55d35c37645909d2b98e
-            </div>
-        <%# end %>
+        <% end %>
     <% end %>
-    <input type="text" placeholder="Add a new comment" class="comment_input" style="float:left;">
 </div>
-
-
-
 
 <!-- Delete Post Alert Box -->
 

@@ -22,6 +22,15 @@ Rails.application.routes.draw do
   post '/blog/post/reply/comment/:post_id/:comment_id' => 'reply#create', as: :post_reply
   delete '/blog/post/:id'=> 'blog#destroy', as: :delete_post
 
+  # Routes for the session
+  get '/register' => 'session#register', as: :register
+  post '/register' => 'session#register_user', as: :register_user
+  get '/login' => 'session#login', as: :login
+  post '/login' => 'session#login_user', as: :login_user
+  delete '/logout' => 'session#logout', as: :logout
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

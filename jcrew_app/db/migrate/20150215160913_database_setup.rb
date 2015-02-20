@@ -3,7 +3,7 @@ class DatabaseSetup < ActiveRecord::Migration
   	create_table :users do |t|
   		t.string :name
   		t.string :email
-  		t.string :password
+  		t.string :password_digest
   		t.string :photo, default: ""
   		t.string :signature, default: ""
   		t.text :about, default: ""

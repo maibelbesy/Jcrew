@@ -1,0 +1,20 @@
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li class="warning" style="background-color: transparent; color: rgba(92,211,173, 0.65);list-style-type: none;"><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="login-div" style="margin: 0em auto">
+    <%= form_for :register, :url => register_user_path do |f| %>
+     <%= f.email_field :email, class: "login-input", placeholder: "Enter your email", style: "float:left;background-color: transparent;color:white;margin-top: 0.5em;" %>
+     <%= f.password_field :password, class: "login-input", placeholder: "Create a new password", style: "float:left;background-color: transparent;color:white;margin-top: 0.5em;" %>
+     <%= f.text_field :name, class: "login-input", placeholder: "Enter your name", style: "float:left;background-color: transparent;color:white;margin-top: 0.5em;" %>
+     <%= f.submit "Register", class: "login-button", style: "margin-top: 0.5em;" %>
+     <% end %>
+     <br>
+     <p id="login-p">Already have an account? <%= link_to 'Log in', login_url, style:"color: rgba(92,211,173, 0.65);text-decoration: underline" %></p>
+</div>

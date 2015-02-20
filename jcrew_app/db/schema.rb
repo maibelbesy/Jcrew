@@ -60,11 +60,11 @@ ActiveRecord::Schema.define(version: 20150215160913) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "password"
-    t.string   "photo",      default: ""
-    t.string   "signature",  default: ""
-    t.text     "about",      default: ""
-    t.boolean  "is_admin",   default: false
+    t.string   "password_digest"
+    t.string   "photo",           default: ""
+    t.string   "signature",       default: ""
+    t.text     "about",           default: ""
+    t.boolean  "is_admin",        default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

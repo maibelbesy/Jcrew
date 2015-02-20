@@ -1,7 +1,9 @@
 <!-- PROFILE PAGE -->
-<div style="">
-    <%= button_to "Edit Profile", user_edit_path(params[:id]), class: "delete-post", style: "float:right;margin-right: 1em;", method: :get %>
-</div>
+<% if logged_in? && @current_user.id == @member.id %>
+    <div style="">
+        <%= button_to "Edit Profile", user_edit_path(params[:id]), class: "delete-post", style: "float:right;margin-right: 1em;", method: :get %>
+    </div>
+<% end %>
 
 <div style="height: auto;overflow: auto;">
     <div class="member-photo">
