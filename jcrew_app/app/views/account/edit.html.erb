@@ -35,6 +35,7 @@
                 <br><br>
             <% end %>
             <%= f.text_area :signature, :value => @member.signature, class: "signature-textarea", placeholder: "Enter your signature"  %>
+            <%= f.file_field :photo %>
             <br><br>
             <%= f.submit "Save", class: "login-button", style: "width: 60%" %>
             <br><br>

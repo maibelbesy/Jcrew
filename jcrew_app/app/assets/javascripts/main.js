@@ -50,7 +50,7 @@ $(function (){
     $('.account-menu-item').mouseleave(function(){
         $(this).removeClass('menu-item-highlighted');
     });
-})
+});
 
 // Slide Page to List Posts by Category
 
@@ -65,7 +65,7 @@ $(function (){
             $page.addClass('slid');
         }
     });
-})
+});
 
 $(function(){
   $('.login-input').keyup(function(){
@@ -86,7 +86,7 @@ $(function (){
             $dimmer.addClass('display-none');
         }
     });
-})
+});
 
 $(function (){
     $('.cancel-delete').click(function(){
@@ -100,7 +100,7 @@ $(function (){
             });
         }
     });
-})
+});
 
 // Includes Facebook SDK
 
