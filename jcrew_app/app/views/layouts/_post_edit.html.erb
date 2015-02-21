@@ -9,13 +9,34 @@
     <%= form_for :post, :url => update_post_path(params[:id]) do |f| %>
         <%= f.text_field :title, :value => @post.title, class: "login-input", placeholder: "Enter post title", style: "margin-top: 1em;" %>
          <%= f.text_area :content, :value => @post.content, class: "signature-textarea", placeholder: "Enter post content", style: "margin-top: 1em; width: 100%; max-width: 100%;", :rows => 18 %>
+         <!-- Select a category -->
+         <div class="categories-div">
+            <h3 id="container-meet">Categories</h1><br><br>
+            <%= fields_for :category do |c| %>
+                <% categories = Category.all %>
+                <% categories.each do |category| %>
+                    <%= c.check_box category.id, {:checked => CategoryPost.exists?(:post_id => params[:id], :category_id => category.id)} %>
+                    <font style="margin-right: 0.5em"><%= "#{category.name}" %></font>
+                <% end %>
+            <% end%>
+         </div>
          <%= f.submit "Save", class: "login-button", style: "margin-top: 0.5em;" %>
     <% end %>
 <% else %>
     <%= form_for :post, :url => create_post_path do |f| %>
         <%= f.text_field :title, class: "login-input", placeholder: "Enter post title", style: "margin-top: 1em;" %>
         <%= f.text_area :content, class: "signature-textarea", placeholder: "Enter post content", style: "margin-top: 1em; width: 100%; max-width: 100%;", :rows => 18 %>
-        <br>
+        <div class="categories-div">
+            <h3 id="container-meet">Categories</h1><br><br>
+            <%= fields_for :category do |c| %>
+                <% categories = Category.all %>
+                <% categories.each do |category| %>
+                    <%= c.check_box category.id, {:checked => CategoryPost.exists?(:post_id => params[:id], :category_id => category.id)} %>
+                    <font style="margin-right: 0.5em"><%= "#{category.name}" %></font>
+                <% end %>
+            <% end%>
+         </div>
         <%= f.submit "Add", class: "login-button", style: "margin-top: 0.5em;" %>
     <% end %>
 <% end %>
+

@@ -13,20 +13,20 @@
 
 ActiveRecord::Schema.define(version: 20150220180042) do
 
-  create_table "categories", force: :cascade do |t|
+  create_table "categories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "categories_posts", id: false, force: :cascade do |t|
+  create_table "categories_posts", id: false, force: true do |t|
     t.integer  "post_id",     null: false
     t.integer  "category_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "comments", force: :cascade do |t|
+  create_table "comments", force: true do |t|
     t.text     "content"
     t.integer  "user_id"
     t.integer  "post_id"
@@ -34,14 +34,14 @@ ActiveRecord::Schema.define(version: 20150220180042) do
     t.datetime "updated_at"
   end
 
-  create_table "comments_join", force: :cascade do |t|
+  create_table "comments_join", force: true do |t|
     t.integer  "comment_id"
     t.integer  "reply_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "media", force: :cascade do |t|
+  create_table "media", force: true do |t|
     t.string   "url"
     t.integer  "post_id"
     t.boolean  "is_image"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20150220180042) do
     t.datetime "updated_at"
   end
 
-  create_table "posts", force: :cascade do |t|
+  create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20150220180042) do
     t.datetime "updated_at"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"

@@ -1,4 +1,4 @@
-<div style="height: auto;overflow: hidden;padding: 10px;margin-bottom: 2em">
+<div style="height: auto;overflow: hidden;padding: 10px;margin-bottom: 2em;background-color: white;z-index: 10;">
     <div class="post-info" style="text-align: center">
     	<% if index %>
 	        <%= link_to "#{post.title}", post_path(post.id), :id => "post-title" %>
@@ -21,10 +21,15 @@
         <br>
         <br>
         <div class="fb-share-button" data-href=<%= "http://www.facebook.com#{post_path(post.id)}" %> data-layout="button_count"></div> -->
+        <% categories = post.categories %>
+        <% categories.each do |category| %>
+            <p id="post-comments" style="font-size: 12px; width: 20%;margin-top: 0.3em"> <%= "#{category.name}" %> </p>
+        <% end %>
     </div>
+
     <div class="post-content">
-        <% content = post.content + "<br><br> #{User.first.signature}" if not User.first.signature.blank? %>
-        <% content = post.content if User.first.signature.blank? %>
+        <% content = post.content + "<br><br> <i>#{@current_user.signature}</i>" if not @current_user.signature.blank? %>
+        <% content = post.content if @current_user.signature.blank? %>
         <%= simple_format(content) %>
     </div>
 </div>

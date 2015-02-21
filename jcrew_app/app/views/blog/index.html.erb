@@ -1,9 +1,24 @@
 <!-- BLOG PAGE -->
 <!-- <button type="button" class="list-posts">Add Post</button> -->
 <!-- <span><%# button_to "Add Post", new_post_path(params[:id]), class: "list-posts", method: :get %></span> -->
-<button type="button" class="list-posts" style="float: right">List Posts</button>
+<!-- <div style="z-index: 1;top: 11em;position: fixed;width: 60%;border: 1px solid;"> -->
+    <div class="categories-div" style="width: 100%;display: none">
+        <h3 id="container-meet">Filter by Categories</h1><br><br>
+        <%= form_for :category, :url => filter_posts_path do |f| %>
+            <% categories = Category.all %>
+            <% categories.each do |category| %>
+                <%= f.check_box category.id, {:checked => CategoryPost.exists?(:post_id => params[:id], :category_id => category.id)} %>
+                <font style="margin-right: 0.5em"><%= "#{category.name}" %></font>
+            <% end %>
+            <%= f.submit 'Filter', class: "list-posts", style: "float: right;color: white" %>
+        <% end%>
+    </div>
+<!-- </div> -->
+ <br>
+<button type="button" class="list-posts" id="list-posts" style="float: right">Filter Posts</button>
 <br><br>
-<% @posts.each do |post| %>
+<div style="position: relative;z-index: 2">
+    <% @posts.each do |post| %>
 <!--     <div style="height: auto;overflow: hidden;padding: 10px;margin-bottom: 2em">
         <div class="post-info" style="text-align: center">
             <%= link_to "#{post.title}", post_path(post.id), :id => "post-title" %>
@@ -29,3 +44,13 @@
     <!-- This following line replaced the whole commented div block before it. It is called a partial -->
     <%= render '/layouts/post', :post => post, :index => true %>
 <% end %>
+</div>
+
+<style type="text/css">
+    .box{
+        z-index: 1;
+        top: 11em;
+        position: fixed;
+        width: 100;
+    }
+</style>

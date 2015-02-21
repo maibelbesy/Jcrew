@@ -13,14 +13,18 @@ Rails.application.routes.draw do
 
   # Routes for the blog
   get '/blog' => 'blog#index', as: :posts
+  post '/blog' => 'blog#list', as: :filter_posts
   get '/blog/post/:id' => 'blog#show', as: :post
   get '/blog/new' => 'blog#new', as: :new_post
   get '/blog/edit/:id' => 'blog#edit', as: :edit_post
   post '/blog/edit/:id' => 'blog#update', as: :update_post
   post '/blog/new' => 'blog#create', as: :create_post
+  post '/blog/publish' => 'blog#publish', as: :publish_post
+  delete '/blog/post/:id'=> 'blog#destroy', as: :delete_post
+
   post '/blog/post/comment/:id' => 'comments#create', as: :post_comment
   post '/blog/post/reply/comment/:post_id/:comment_id' => 'reply#create', as: :post_reply
-  delete '/blog/post/:id'=> 'blog#destroy', as: :delete_post
+  delete '/blog/post/comment/:id' => 'comments#destroy', as: :delete_comment
 
   # Routes for the session
   get '/register' => 'session#register', as: :register

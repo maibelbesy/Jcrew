@@ -57,20 +57,22 @@ $(function (){
 $(function (){
     $('.list-posts').click(function(){
         var $page = $('.container-container');
-        if ($page.hasClass('slid')){
-            $page.animate({top: '0em'}, 200);
-            $page.removeClass('slid');
+        var $div = $('.categories-div');
+        if ($div.is(":visible")){
+            // $page.animate({top: '0em'}, {duration: 300, queue: false});
+            // $('.categories-div').fadeOut({duration: 350, queue: false});
+            $div.slideToggle('fast');
+            $('#list-posts').text('Filter Posts')
+            // $page.removeClass('slid');
         } else {
-            $page.animate({top: '5em'}, 200);
-            $page.addClass('slid');
+            // $div.fadeIn({duration: 350, queue: false});
+            // $slide_location = $div.position().top() + $('.categories-div').height();
+            // $page.animate({top: $slide_location}, {duration: 300, queue: false});
+            $('#list-posts').text('Cancel')
+            $div.slideToggle('fast');
+            // $page.addClass('slid');
         }
     });
-});
-
-$(function(){
-  $('.login-input').keyup(function(){
-     $('.test').text($(this).val().simpleFormat);
-  });
 });
 
 // Ask Before Deleting a Post
