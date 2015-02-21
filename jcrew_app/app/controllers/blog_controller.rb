@@ -24,6 +24,7 @@ class BlogController < ApplicationController
 	end
 
 	def show
+		# redirect_not_published
 		@post = Post.find(params[:id])
 	end
 
@@ -33,18 +34,20 @@ class BlogController < ApplicationController
 
 	def create
 		hash = params[:post]
-		categories = params[:category]
-		selected_categories_array = []
-		categories.each{ |k,v|
-			if v == 1 || v == '1'
-				selected_categories_array << k
-			end
-		}
 		@post = Post.create(:title => hash[:title], :content => hash[:content], :user_id => @current_user.id)
-		ActiveRecord::Base.transaction do
-		  selected_categories_array.each {|k| 
-		  	CategoryPost.create(:post_id => @post.id, :category_id => k) if not CategoryPost.exists?(:post_id => @post.id, :category_id => k)
-		   }
+		if params[:category] != nil
+			categories = params[:category]
+			selected_categories_array = []
+			categories.each{ |k,v|
+				if v == 1 || v == '1'
+					selected_categories_array << k
+				end
+			}
+			ActiveRecord::Base.transaction do
+				selected_categories_array.each {|k| 
+					CategoryPost.create(:post_id => @post.id, :category_id => k) if not CategoryPost.exists?(:post_id => @post.id, :category_id => k)
+				}
+			end
 		end
 
 		flash[:warning] = []
@@ -61,22 +64,24 @@ class BlogController < ApplicationController
 
 	def update
 		hash = params[:post]
-		categories = params[:category]
-		selected_categories_array = []
-		removed_categores_array = []
-		categories.each{ |k,v|
-			if v == 1 || v == '1'
-				selected_categories_array << k
-			elsif v == 0 || v == '0'
-				removed_categores_array << k
-			end
-		}
+		if params[:category] != nil
+			categories = params[:category]
+			selected_categories_array = []
+			removed_categores_array = []
+			categories.each{ |k,v|
+				if v == 1 || v == '1'
+					selected_categories_array << k
+				elsif v == 0 || v == '0'
+					removed_categores_array << k
+				end
+			}
 
-		CategoryPost.where(:post_id => params[:id], :category_id => removed_categores_array).delete_all
-		ActiveRecord::Base.transaction do
-		  selected_categories_array.each {|k| 
-		  	CategoryPost.create(:post_id => params[:id], :category_id => k) if not CategoryPost.exists?(:post_id => params[:id], :category_id => k)
-		   }
+			CategoryPost.where(:post_id => params[:id], :category_id => removed_categores_array).delete_all
+			ActiveRecord::Base.transaction do
+			  selected_categories_array.each {|k| 
+			  	CategoryPost.create(:post_id => params[:id], :category_id => k) if not CategoryPost.exists?(:post_id => params[:id], :category_id => k)
+			   }
+			end
 		end
 
 		flash[:warning] = []
@@ -85,9 +90,6 @@ class BlogController < ApplicationController
 		redirect_to edit_post_path and return if flash[:warning].count > 0
 		Post.find(params[:id]).update(:title => hash[:title], :content => hash[:content])
 		redirect_to post_path(params[:id])
-	end
-
-	def publish
 	end
 
 	def destroy

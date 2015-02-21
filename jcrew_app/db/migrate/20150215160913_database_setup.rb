@@ -16,6 +16,7 @@ class DatabaseSetup < ActiveRecord::Migration
   		t.string :title
   		t.text :content
   		t.integer :user_id
+      # t.boolean :is_published, default: false
 
   		t.timestamps
   	end
@@ -35,13 +36,13 @@ class DatabaseSetup < ActiveRecord::Migration
   		t.timestamps
   	end
 
-  	create_table :media do |t|
-  		t.string :url
-  		t.integer :post_id
-  		t.boolean :is_image
+  	# create_table :media do |t|
+  	# 	t.string :url
+  	# 	t.integer :post_id
+  	# 	t.boolean :is_image
 
-  		t.timestamps
-  	end
+  	# 	t.timestamps
+  	# end
 
   	create_table :categories do |t|
   		t.string :name

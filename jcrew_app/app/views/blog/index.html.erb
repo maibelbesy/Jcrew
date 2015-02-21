@@ -1,7 +1,7 @@
 <!-- BLOG PAGE -->
 <!-- <button type="button" class="list-posts">Add Post</button> -->
 <!-- <span><%# button_to "Add Post", new_post_path(params[:id]), class: "list-posts", method: :get %></span> -->
-<!-- <div style="z-index: 1;top: 11em;position: fixed;width: 60%;border: 1px solid;"> -->
+<% if Category.count > 0 && Post.count > 0 %>
     <div class="categories-div" style="width: 100%;display: none">
         <h3 id="container-meet">Filter by Categories</h1><br><br>
         <%= form_for :category, :url => filter_posts_path do |f| %>
@@ -11,11 +11,11 @@
                 <font style="margin-right: 0.5em"><%= "#{category.name}" %></font>
             <% end %>
             <%= f.submit 'Filter', class: "list-posts", style: "float: right;color: white" %>
-        <% end%>
+        <% end %>
     </div>
-<!-- </div> -->
- <br>
-<button type="button" class="list-posts" id="list-posts" style="float: right">Filter Posts</button>
+     <br>
+    <button type="button" class="list-posts" id="list-posts" style="float: right">Filter Posts</button>
+<% end %>
 <br><br>
 <div style="position: relative;z-index: 2">
     <% @posts.each do |post| %>

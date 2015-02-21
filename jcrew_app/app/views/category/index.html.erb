@@ -1,0 +1,19 @@
+<!-- CATEGORY PAGE -->
+
+<div class="categories-div">
+    <h3 id="container-meet">Categories</h1><br><br>
+    <% categories = Category.all %>
+    <% categories.each do |category| %>
+        <%= form_for :category, :url => update_category_path(category.id) do |f| %>
+            <!-- <font style="margin-right: 0.5em"><%= "#{category.name}" %></font> -->
+            <%= f.text_field :name, :value => category.name, placeholder: "Rename category", class: "signature-textarea", style: "color: white;font-size:16px;width:40%;color:black" %>
+            <%= link_to 'Delete', delete_category_path(category.id), class: "delete-post", style: "color:white;float:right;text-align:center", method: :delete %>
+            <br><br>
+        <% end %>
+        <br><br>
+    <% end %>
+    <%= form_for :category, :url => create_category_path do |c| %>
+        <%= c.text_field :name, placeholder: 'Enter category name', class: "signature-textarea", style: "color: white;font-size:16px;width:40%;color:black" %>
+    <% end %>
+        
+</div>

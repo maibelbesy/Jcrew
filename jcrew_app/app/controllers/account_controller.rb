@@ -1,8 +1,9 @@
 class AccountController < ApplicationController
-	# before_action :redirect_guests
-
+	
 	def show
 		@member = User.find(params[:id])
+		redirect_guests and return if !@member.is_admin
+		redirect_to posts_path and return if !@member.is_admin && logged_in? && @member.id != @current_user.id
 	end
 
 	def edit

@@ -41,18 +41,11 @@ ActiveRecord::Schema.define(version: 20150220180042) do
     t.datetime "updated_at"
   end
 
-  create_table "media", force: true do |t|
-    t.string   "url"
-    t.integer  "post_id"
-    t.boolean  "is_image"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
+    t.boolean  "is_published", default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

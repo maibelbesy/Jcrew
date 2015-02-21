@@ -19,12 +19,18 @@ Rails.application.routes.draw do
   get '/blog/edit/:id' => 'blog#edit', as: :edit_post
   post '/blog/edit/:id' => 'blog#update', as: :update_post
   post '/blog/new' => 'blog#create', as: :create_post
-  post '/blog/publish' => 'blog#publish', as: :publish_post
   delete '/blog/post/:id'=> 'blog#destroy', as: :delete_post
 
+  # Routes for the comments
   post '/blog/post/comment/:id' => 'comments#create', as: :post_comment
   post '/blog/post/reply/comment/:post_id/:comment_id' => 'reply#create', as: :post_reply
   delete '/blog/post/comment/:id' => 'comments#destroy', as: :delete_comment
+
+  # Routes for the categories
+  get '/blog/category' => 'category#index', as: :categories
+  post '/blog/category/create' => 'category#create', as: :create_category
+  post '/blog/category/:id/update' => 'category#update', as: :update_category
+  delete '/blog/category/:id/delete' => 'category#destroy', as: :delete_category
 
   # Routes for the session
   get '/register' => 'session#register', as: :register

@@ -5,8 +5,13 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-  	# Comment.find(params[:id]).replies.destroy_all
-		# Comment.destroy(params[:id])
+  	replies = Comment.find(params[:id]).replies
+    deleted_replies = []
+    replies.each{|reply|
+      deleted_replies << reply.id
+    }
+    Comment.where(:id => deleted_replies).destroy_all
+		Comment.destroy(params[:id])
   	# comment.replies.delete_all
   	# comment.delete
   	# Comment.delete(params[:id])
