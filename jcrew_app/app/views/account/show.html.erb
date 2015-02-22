@@ -22,7 +22,7 @@
 </div>
 
 <% if false %>
-    <%= form_for :user, url: "/users/edit/#{@member.id}" do |f| %>
+    <%= form_for :user,:html => { :multipart => true }, url: "/users/edit/#{@member.id}" do |f| %>
         <div style="float: right;width:80%;">
             <%= f.text_field :name, :value => @member.name, class: "login-input", placeholder: "Enter your name", style: "margin-top: 1em; width: 60%;" %>
             <%= f.text_field :email, :value => @member.email, class: "login-input", placeholder: "Enter your email", style: "margin-top: 1em; width: 60%;" %>

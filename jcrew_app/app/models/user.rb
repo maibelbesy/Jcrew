@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
 
 	has_secure_password validations: false
 	
-  has_attached_file :photo, :styles => { :small => "150x150>" },
+  has_attached_file :photo, :styles => { :small => "150x150>" }, :default_url => "",
                   :url  => "/assets/posts/:id/:style/:basename.:extension",
                   :path => ":rails_root/public/assets/posts/:id/:style/:basename.:extension"
 

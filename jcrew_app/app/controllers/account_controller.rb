@@ -22,4 +22,6 @@ class AccountController < ApplicationController
 		User.find(params[:id]).update(:name => hash[:name], :email => hash[:email], :about => hash[:about], :signature => hash[:signature], :photo => hash[:photo])
 		redirect_to user_path(params[:id])
 	end
+	
+	
 end
