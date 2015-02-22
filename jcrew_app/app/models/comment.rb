@@ -10,4 +10,15 @@ class Comment < ActiveRecord::Base
 
 	has_many :replies_join, class_name: "CommentJoin", foreign_key: "reply_id"
 	has_many :comment, through: :replies_join, source: :comment
+	
+	auto_html_for :content do
+  html_escape
+  image
+  youtube(:width => 400, :height => 250)
+  link :target => "_blank", :rel => "nofollow"
+  simple_format
+   end
+	
+	
+	
 end

@@ -31,7 +31,9 @@
 <!-- This following line replaced the whole commented div block before it. It is called a partial -->
 <%= render '/layouts/post', :post => @post, :index => false %>
 
-
+<%def body_html
+auto_html(self[:content_html]) { simple_format; link(:target => 'blank') }
+end%>
 <% comments = @post.comments %>
 <div class="post-comments">
     <h3 id="container-meet">Comments</h1>
@@ -45,8 +47,9 @@
                 <div class="post-comment">
                     <strong><span><%= "#{comment.user.name}" %></span></strong><span><%= link_to 'Delete', delete_comment_path(comment.id), class: "delete-post", style: "color:white;float:right;text-align:center", method: :delete if logged_in? && (@current_user.is_admin || comment.user_id == @current_user.id)%></span>
                     <br>
-                    <% content = comment.content + "<br><br> <i>#{comment.user.signature}</i>" if not comment.user.signature.blank? %>
-                    <% content = comment.content if comment.user.signature.blank? %>
+                    <% content = comment.content_html + "<br><br> <i>#{comment.user.signature}</i>" if not comment.user.signature.blank? %>
+                    <%= comment.content_html %>
+                    <% content = comment.content_html if comment.user.signature.blank? %>
                     <p style="word-wrap: break-word"><%= simple_format(content) %></p>
                     <hr style="margin-top: 0.4em; border-color: rgba(255, 30, 30, 0.65);; border-width: 1px"></hr>
                     <br>
@@ -55,8 +58,9 @@
                         <div class="comment-reply" style="margin-bottom: 1em">
                             <strong><span><%= "#{reply.user.name}" %></span></strong><span><%= link_to 'Delete', delete_comment_path(reply.id), class: "delete-post", style: "color:white;float:right;text-align:center", method: :delete if logged_in? && (@current_user.is_admin || comment.user_id == @current_user.id)%></span>
                             <br>
-                            <% content = reply.content + "<br><br> <i>#{comment.user.signature}</i>" if not comment.user.signature.blank? %>
-                            <% content = reply.content if comment.user.signature.blank? %>
+                            <% content = reply.content_html + "<br><br> <i>#{comment.user.signature}</i>" if not comment.user.signature.blank? %>
+                            <%= reply.content_html %>
+                            <% content = reply.content_html if comment.user.signature.blank? %>
                             <p style="word-wrap: break-word"><%= simple_format(content) %></p>
                         </div>
                     <% end %>

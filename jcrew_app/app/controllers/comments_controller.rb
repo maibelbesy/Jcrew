@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
     redirect_to post_path(params[:id])
   end
 
+
   def destroy
   	replies = Comment.find(params[:id]).replies
     deleted_replies = []

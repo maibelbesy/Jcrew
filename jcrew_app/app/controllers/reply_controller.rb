@@ -7,4 +7,9 @@ class ReplyController < ApplicationController
 		redirect_to post_path(@post)
 	end
 
+def preview
+  reply = Reply.new(params[:reply])
+  render :text => reply.content_html
+end
+
 end
