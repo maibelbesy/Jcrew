@@ -15,4 +15,13 @@ class Post < ActiveRecord::Base
 	has_many :categories, through: :categories_posts, source: :category, dependent: :destroy
 
 	accepts_nested_attributes_for :categories
+	
+	 auto_html_for :content do
+  html_escape
+  image
+  youtube(:width => 400, :height => 250)
+  link :target => "_blank", :rel => "nofollow"
+  simple_format
+   end
+	
 end

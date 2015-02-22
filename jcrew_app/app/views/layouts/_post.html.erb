@@ -28,8 +28,10 @@
     </div>
 
     <div class="post-content">
-        <% content = post.content + "<br><br> <i>#{post.user.signature}</i>" if not post.user.signature.blank? %>
-        <% content = post.content if post.user.signature.blank? %>
-        <%= simple_format(content) %>
+        <!-- <% content = post.content + "<br><br> <i>#{post.user.signature}</i>" if not post.user.signature.blank? %>
+        <% content = post.content if post.user.signature.blank? %> -->
+        <%= post.content_html + "#{post.user.signature}" if not post.user.signature.blank?%>
+        <%= post.content_html if post.user.signature.blank? %>
+        <!-- <%= simple_format(content) %> -->
     </div>
 </div>
